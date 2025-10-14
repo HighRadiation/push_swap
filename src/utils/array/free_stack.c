@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "push_swap.h"
 
-typedef struct s_stack	t_stack;
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
 
-int		ft_atoi(const char *str);
-void	ft_putstr(char *str);
-void	error_exit(void);
+	if (!stack || !*stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
+}
 
-int		check_args(char **argv);
-int		has_duplicates(t_stack *stack);
-void	index_stack(t_stack **stack);
-
-int		get_min(t_stack *stack);
-int		get_max(t_stack *stack);
-int		get_min_index(t_stack *stack);
-
-#endif

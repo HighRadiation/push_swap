@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   stack_new.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "push_swap.h"
 
-typedef struct s_stack	t_stack;
+t_stack	*stack_new(int value)
+{
+	t_stack	*new;
 
-int		ft_atoi(const char *str);
-void	ft_putstr(char *str);
-void	error_exit(void);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->index = -1;
+	new->next = NULL;
+	return (new);
+}
 
-int		check_args(char **argv);
-int		has_duplicates(t_stack *stack);
-void	index_stack(t_stack **stack);
-
-int		get_min(t_stack *stack);
-int		get_max(t_stack *stack);
-int		get_min_index(t_stack *stack);
-
-#endif

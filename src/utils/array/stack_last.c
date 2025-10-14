@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   stack_last.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "push_swap.h"
 
-typedef struct s_stack	t_stack;
+t_stack	*stack_last(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
+}
 
-int		ft_atoi(const char *str);
-void	ft_putstr(char *str);
-void	error_exit(void);
-
-int		check_args(char **argv);
-int		has_duplicates(t_stack *stack);
-void	index_stack(t_stack **stack);
-
-int		get_min(t_stack *stack);
-int		get_max(t_stack *stack);
-int		get_min_index(t_stack *stack);
-
-#endif

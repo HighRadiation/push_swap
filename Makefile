@@ -16,7 +16,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 # Make program
-$(NAME): $(OBJS)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 %.o: %.c
@@ -24,7 +24,7 @@ $(NAME): $(OBJS)
 
 # Cleaning
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 # Full cleaning
 fclean:
 	rm -f $(NAME)
