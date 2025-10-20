@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 17:35:20 by boksuz            #+#    #+#             */
-/*   Updated: 2025/10/06 17:35:21 by boksuz           ###   ########.fr       */
+/*   Created: 2025/10/20 17:35:20 by boksuz            #+#    #+#             */
+/*   Updated: 2025/10/20 17:35:21 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PARSING_H
+# define PARSING_H
 
-static void	swap(t_stack **stack)
-{
-	t_stack	*first;
-	t_stack	*second;
+typedef struct s_stack	t_stack;
 
-	if (!*stack || !(*stack)->next)
-		return ;
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
-}
+int		check_args(char **argv);
+int		is_valid_number(char *str);
+int		check_int_overflow(char *str);
+char	**parse_arguments(int argc, char **argv);
+t_stack	*create_stack_from_args(char **args);
 
-void	sa(t_stack **stack_a)
-{
-	swap(stack_a);
-	write(1, "sa\n", 3);
-}
+#endif

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 17:35:20 by boksuz            #+#    #+#             */
-/*   Updated: 2025/10/06 17:35:21 by boksuz           ###   ########.fr       */
+/*   Created: 2025/10/20 17:35:20 by boksuz            #+#    #+#             */
+/*   Updated: 2025/10/20 17:35:21 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_STRING_H
+# define FT_STRING_H
 
-static void	swap(t_stack **stack)
-{
-	t_stack	*first;
-	t_stack	*second;
+# include <stdlib.h>
 
-	if (!*stack || !(*stack)->next)
-		return ;
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
-}
+int		ft_isdigit(int c);
+int		ft_strlen(const char *s);
+char	**ft_split(char const *s, char c);
+void	free_split_array(char **arr);
 
-void	sa(t_stack **stack_a)
-{
-	swap(stack_a);
-	write(1, "sa\n", 3);
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 17:35:26 by boksuz            #+#    #+#             */
-/*   Updated: 2025/10/06 17:35:27 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/10/20 17:35:27 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include "stack_ops.h"
 # include "utils.h"
+# include "ft_string.h"
+# include "parsing.h"
 
 typedef struct s_stack
 {

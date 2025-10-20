@@ -1,57 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.c                                       :+:      :+:    :+:   */
+/*   parse_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 17:35:20 by boksuz            #+#    #+#             */
+/*   Created: 2025/10/20 17:35:20 by boksuz            #+#    #+#             */
 /*   Updated: 2025/10/20 17:35:21 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_string.h"
+#include "parsing.h"
 
-int	has_duplicates(t_stack *stack)
+/* 
+** Parse arguments - handles both "./push_swap 4 2 1" and "./push_swap "4 2 1""
+** Returns a NULL-terminated array of strings
+*/
+char	**parse_arguments(int argc, char **argv)
 {
-	t_stack	*tmp;
-	t_stack	*current;
+	char	**args;
 
-	current = stack;
-	while (current)
+	if (argc == 2)
 	{
-		tmp = current->next;
-		while (tmp)
+		// Single argument case - split by spaces (handles "4 2 1")
+		args = ft_split(argv[1], ' ');
+		if (!args || !args[0])
 		{
-			if (current->value == tmp->value)
-				return (1);
-			tmp = tmp->next;
+			if (args)
+				free_split_array(args);
+			return (NULL);
 		}
-		current = current->next;
+		return (args);
 	}
-	return (0);
-}
-
-void	index_stack(t_stack **stack)
-{
-	t_stack	*current;
-	t_stack	*compare;
-	int		index;
-
-	current = *stack;
-	while (current)
+	else
 	{
-		index = 0;
-		compare = *stack;
-		while (compare)
-		{
-			if (current->value > compare->value)
-				index++;
-			compare = compare->next;
-		}
-		current->index = index;
-		current = current->next;
+		// Multiple arguments - skip argv[0] (program name)
+		return (&argv[1]);
 	}
 }
-
-

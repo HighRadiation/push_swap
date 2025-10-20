@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 17:35:20 by boksuz            #+#    #+#             */
-/*   Updated: 2025/10/06 17:35:21 by boksuz           ###   ########.fr       */
+/*   Created: 2025/10/20 17:35:20 by boksuz            #+#    #+#             */
+/*   Updated: 2025/10/20 17:35:21 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_string.h"
 
-static void	swap(t_stack **stack)
+int	ft_strlen(const char *s)
 {
-	t_stack	*first;
-	t_stack	*second;
+	int	len;
 
-	if (!*stack || !(*stack)->next)
-		return ;
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
-}
-
-void	sa(t_stack **stack_a)
-{
-	swap(stack_a);
-	write(1, "sa\n", 3);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

@@ -1,57 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.c                                       :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 17:35:20 by boksuz            #+#    #+#             */
+/*   Created: 2025/10/20 17:35:20 by boksuz            #+#    #+#             */
 /*   Updated: 2025/10/20 17:35:21 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "parsing.h"
 
-int	has_duplicates(t_stack *stack)
+/* Create stack from parsed arguments */
+t_stack	*create_stack_from_args(char **args)
 {
-	t_stack	*tmp;
-	t_stack	*current;
+	t_stack	*stack_a;
+	t_stack	*new_node;
+	int		i;
+	int		value;
 
-	current = stack;
-	while (current)
+	stack_a = NULL;
+	i = 0;
+	while (args[i])
 	{
-		tmp = current->next;
-		while (tmp)
+		value = ft_atoi(args[i]);
+		new_node = stack_new(value);
+		if (!new_node)
 		{
-			if (current->value == tmp->value)
-				return (1);
-			tmp = tmp->next;
+			free_stack(&stack_a);
+			return (NULL);
 		}
-		current = current->next;
+		stack_add_back(&stack_a, new_node);
+		i++;
 	}
-	return (0);
+	return (stack_a);
 }
-
-void	index_stack(t_stack **stack)
-{
-	t_stack	*current;
-	t_stack	*compare;
-	int		index;
-
-	current = *stack;
-	while (current)
-	{
-		index = 0;
-		compare = *stack;
-		while (compare)
-		{
-			if (current->value > compare->value)
-				index++;
-			compare = compare->next;
-		}
-		current->index = index;
-		current = current->next;
-	}
-}
-
-

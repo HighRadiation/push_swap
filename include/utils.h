@@ -6,7 +6,7 @@
 /*   By: boksuz <boksuz@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 17:35:20 by boksuz            #+#    #+#             */
-/*   Updated: 2025/10/06 17:35:21 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/10/20 17:35:21 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int		ft_atoi(const char *str);
 void	ft_putstr(char *str);
 void	error_exit(void);
 
-int		check_args(char **argv);
 int		has_duplicates(t_stack *stack);
 void	index_stack(t_stack **stack);
 

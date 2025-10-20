@@ -2,52 +2,68 @@
 
 **Proje:** push_swap  
 **Hazırlayan:** boksuz  
-**Tarih:** 14 Ekim 2025  
+**Güncelleme:** 20 Ekim 2025  
 **Okul:** 42 Istanbul
 
 ---
 
-## 📖 Dokümantasyon Listesi
+## 📖 Dokümantasyon Kategorileri
 
-### 🎯 Ana Program
+### 🌟 Başlangıç (Önce Bunları Okuyun!)
+- [`README_TR.md`](README_TR.md) - ⭐ Türkçe Proje Özeti ve Kullanım
+- [`push_swap.md`](push_swap.md) - Proje genel bakış
+- [`struct.md`](struct.md) - Stack veri yapısı
+
+### 🆕 Modüler Yapı Dökümantasyonu
+- [`MODULAR_STRUCTURE.md`](MODULAR_STRUCTURE.md) - Yeni modüler klasör yapısı
+- [`DEGISIKLIKLER.md`](DEGISIKLIKLER.md) - Yapılan değişiklikler ve iyileştirmeler
+- [`structure.md`](structure.md) - Klasör yapısı detayları
+
+### 🎯 Kod Dökümantasyonu
+
+#### Ana Program
 - [`main_c.md`](main_c.md) - Program giriş noktası, argüman parse
 
-### 🧮 Sıralama Algoritmaları
+#### Sıralama Algoritmaları
 - [`push_swap_c.md`](push_swap_c.md) - Ana sıralama mantığı
 - [`sort_small_c.md`](sort_small_c.md) - 2-5 eleman sıralama
 - [`sort_large_c.md`](sort_large_c.md) - Radix sort algoritması
 
-### 🔧 Utility Fonksiyonları
+#### Utility Fonksiyonları
 - [`validation_c.md`](validation_c.md) - Input validasyonu, parsing
 - [`min_max_c.md`](min_max_c.md) - Min/Max bulma fonksiyonları
 - [`stack_utils.md`](stack_utils.md) - Stack yardımcı fonksiyonları
 
-### ⚙️ Stack Operasyonları
+#### Stack Operasyonları
 - [`stack_operations.md`](stack_operations.md) - Tüm 11 operasyon (sa, pb, ra, rra, vb.)
 
-### 📋 Header Dosyaları
+#### Header Dosyaları
 - [`HEADER_DOSYALARI.md`](HEADER_DOSYALARI.md) - Header dosyaları açıklaması
 
-### 🏗️ Genel
-- [`struct.md`](struct.md) - Stack veri yapısı
-- [`push_swap.md`](push_swap.md) - Proje genel bakış
+### 📄 Ek Belgeler
+- [`tr.subject.md`](tr.subject.md) - Proje konusu (Türkçe)
 
 ---
 
-## 🚀 Hızlı Erişim
+## 🚀 Hızlı Erişim Rehberi
 
-### Yeni Başlayanlar İçin:
-1. [push_swap.md](push_swap.md) - Projeye genel bakış
-2. [struct.md](struct.md) - Stack yapısını anla
-3. [main_c.md](main_c.md) - Program nasıl başlar?
+### 🔰 Yeni Başlayanlar İçin (Sırayla Okuyun):
+1. [`README_TR.md`](README_TR.md) - **BURADAN BAŞLA!** ⭐
+2. [`MODULAR_STRUCTURE.md`](MODULAR_STRUCTURE.md) - Klasör yapısını anla
+3. [`push_swap.md`](push_swap.md) - Projeye genel bakış
+4. [`struct.md`](struct.md) - Stack yapısını anla
+5. [`main_c.md`](main_c.md) - Program nasıl başlar?
 
-### Algoritmalar:
-1. [push_swap_c.md](push_swap_c.md) - Algoritma seçimi
-2. [sort_small_c.md](sort_small_c.md) - Küçük sayılar
-3. [sort_large_c.md](sort_large_c.md) - Radix sort
+### 🧮 Algoritmaları Anlamak İçin:
+1. [`push_swap_c.md`](push_swap_c.md) - Algoritma seçimi mantığı
+2. [`sort_small_c.md`](sort_small_c.md) - Küçük sayılar nasıl sıralanır?
+3. [`sort_large_c.md`](sort_large_c.md) - Radix sort nasıl çalışır?
 
-### Savunma Hazırlığı:
-1. Tüm .md dosyalarını oku
+### 🎓 Savunma Hazırlığı:
+1. [`README_TR.md`](README_TR.md) - Projeyi anlat
+2. [`MODULAR_STRUCTURE.md`](MODULAR_STRUCTURE.md) - Yapıyı açıkla
+3. Algoritma dökümanları - Nasıl çalıştığını anlat
+4. Stack operasyonları - Her operasyonu bilmek önemli!
 2. Örnekleri çalıştır
 3. Algoritma mantığını anla
 
