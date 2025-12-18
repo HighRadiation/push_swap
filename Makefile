@@ -5,10 +5,10 @@ CFLAGS = -Wall -Wextra -Werror
 # Source files
 SRCS = main.c \
        stack_init.c \
-       ops_swap.c \
-       ops_push.c \
-       ops_rotate.c \
-       ops_rev_rotate.c \
+       operations/ops_swap.c \
+       operations/ops_push.c \
+       operations/ops_rotate.c \
+       operations/ops_rev_rotate.c \
        sort.c \
        radix_sort.c \
        utils.c \
@@ -29,7 +29,7 @@ $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
