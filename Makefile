@@ -11,9 +11,9 @@ SRCS = main.c \
        operations/ops_rev_rotate.c \
        sort.c \
        radix_sort.c \
-       utils.c \
-       utils_extra.c \
-       utils_parse.c
+       utils/utils.c \
+       utils/utils_extra.c \
+       utils/utils_parse.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
