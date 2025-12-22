@@ -25,22 +25,34 @@ LIBFT = $(LIBFT_DIR)/libft.a
 # Rules
 all: $(NAME)
 
+
+BLUE = \033[0;34m
+GREEN = \033[0;32m
+YELLOW = \033[1;33m
+RESET = \033[0m
+
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "$(BLUE)Linking...$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "$(GREEN)Build complete!$(RESET)"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I. -c $< -o $@
+	@echo "$(YELLOW)Compiling $<...$(RESET)"
+	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@echo "$(BLUE)Building libft...$(RESET)"
+	@$(MAKE) -s -C $(LIBFT_DIR)
 
 clean:
-	rm -f $(OBJS)
-	make -C $(LIBFT_DIR) clean
+	@echo "$(BLUE)Cleaning object files...$(RESET)"
+	@rm -f $(OBJS)
+	@$(MAKE) -s -C $(LIBFT_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
+	@echo "$(BLUE)Removing executable...$(RESET)"
+	@rm -f $(NAME)
+	@$(MAKE) -s -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// handling, there is no extra free in here.
 static void	free_errors(t_list **a, char **args, int argc_flag)
 {
 	int	i;
@@ -62,8 +63,6 @@ static void	process_args(t_list **a, char **args, int argc_flag)
 		if (nb > INT_MAX || nb < INT_MIN)
 			free_errors(a, args, argc_flag);
 		ft_lstadd_back(a, ft_lstnew_node((int)nb));
-		if (argc_flag == 2)
-			free(args[j]);
 		j++;
 	}
 	if (argc_flag == 2)
